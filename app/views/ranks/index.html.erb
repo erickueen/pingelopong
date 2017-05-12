@@ -1,0 +1,19 @@
+<h1>Ranks</h1>
+<div class="row">
+  <p class="col-md-3">Rank</p>
+  <p class="col-md-3">Name</p>
+  <p class="col-md-3">Score</p>
+  <p class="col-md-3">Games Played</p>
+</div>
+<% counter = 1 %>
+<% @ranks.each do |rank| %>
+  <div class="row">
+
+      <p class="col-md-3"><%= counter %></td>
+        <p class="col-md-3"><%= rank.user.email %></td>
+      <p class="col-md-3"><%= rank.score %></td>
+      <p class="col-md-3">ran.user.games_played</td>
+
+    </div>
+    <% counter += 1 %>
+  <% end %>

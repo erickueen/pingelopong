@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   resources :games, only: [:index, :new, :create]
   devise_for :users
-  root to: "home#index"
+  root to: "ranks#index"
   get '/history', to: 'games#index'
   get '/log',     to: 'games#new'
 end
