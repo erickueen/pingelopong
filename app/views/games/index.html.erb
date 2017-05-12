@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="text-center text-danger">History</h1>
+  <div class="row">
+    <p class="col-md-3">Date</p>
+    <p class="col-md-3">Opponent</p>
+    <p class="col-md-3">Score</p>
+    <p class="col-md-3">Result</p>
+  </div>
+
+
+  <% @games.each do |game| %>
+    <div class="row">
+
+        <p class="col-md-3"><%= game.played_at %></td>
+          <p class="col-md-3"><%= game.player2.email %></td>
+        <p class="col-md-3"><%= game.player1_score %>-<%= game.player2_score %></td>
+        <p class="col-md-3">WIN</td>
+
+      </div>
+    <% end %>
+
+<%= link_to 'New Game', new_game_path %>
