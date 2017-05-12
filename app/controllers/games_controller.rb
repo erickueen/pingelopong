@@ -16,6 +16,14 @@ class GamesController < ApplicationController
     @game = Game.new(game_params)
 
     if @game.save
+      if @game.player1.rank == nil
+        @game.player1.rank = Rank.new
+        @game.player2.rank.save
+      end
+      if @game.player2.rank. == nil
+        @game.player2.rank = Rank.new
+        @game.player2.rank.save
+      end
       @game.update_rank(@game)
       redirect_to games_path, notice: 'Game was successfully created.'
     else

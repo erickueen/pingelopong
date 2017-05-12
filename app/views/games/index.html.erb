@@ -15,7 +15,11 @@
         <p class="col-md-3"><%= game.played_at %></td>
         <p class="col-md-3"><%= game.player2.email %></td>
         <p class="col-md-3"><%= game.player1_score %>-<%= game.player2_score %></td>
-        <p class="col-md-3">WIN</td>
+        <% if game.player1_score > game.player2_score %>
+          <p class="col-md-3">WIN</td>
+        <%else %>
+          <p class="col-md-3">LOSE</td>
+        <% end %>
 
       </div>
     <% end %>
